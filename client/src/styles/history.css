@@ -108,7 +108,7 @@
     transform: translateY(-50%);
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
     color: rgba(71, 60, 56, 0.7);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 
 .history_search-icon {
@@ -370,11 +370,16 @@
     width: 90%;
     height: calc(88.755% - 3.1em);
     border-bottom: 1px solid #D1B7A1;
+    overflow: auto;
+}
+
+.history_detail_user-info::-webkit-scrollbar {
+    display: none;
 }
 
 .history_info {
     width: 100%;
-    margin-top: 3em;
+    margin-top: 1.5em;
     display: flex;
     justify-content: space-between;
 }
@@ -397,6 +402,7 @@
     font-size: 2rem;
     text-align: left;
     font-weight: 300;
+    line-height: 30px;
 }
 
 .history_detail_total {
