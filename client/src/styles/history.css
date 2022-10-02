@@ -490,8 +490,8 @@
 
 .item_img {
     position: absolute;
-    left: 1.1%;
-    width: 12.674%;
+    left: 9px;
+    width: 7em;
     height: 80%;
     margin-right: 2.3%;
     background-color: #D9D9D9;
@@ -500,7 +500,7 @@
 
 .item_name-cat {
     position: absolute;
-    left: 20%;
+    left: 17%;
     width: 47.5%;
     height: 72.5%;
 }

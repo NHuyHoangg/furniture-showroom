@@ -111,6 +111,24 @@ export default function Checkout() {
             <p>Amount <br></br> 1</p>
             <p>Price <br></br> $123</p>
           </div>
+          <div className="item_info_ctn">
+            <div className="item_img"></div>
+            <div className="item_name-cat">
+              <p>Item X</p>
+              <p>Category</p>
+            </div>
+            <p>Amount <br></br> 1</p>
+            <p>Price <br></br> $123</p>
+          </div>
+          <div className="item_info_ctn">
+            <div className="item_img"></div>
+            <div className="item_name-cat">
+              <p>Item X</p>
+              <p>Category</p>
+            </div>
+            <p>Amount <br></br> 1</p>
+            <p>Price <br></br> $123</p>
+          </div>
         </div>
         <hr />
         <div className="item_total">
