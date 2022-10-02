@@ -1,19 +1,89 @@
 .checkout_container {
-  /* position: absolute; */
   width: 100%;
+  height: 96rem;
   z-index: -1;
   color: #473C38;
   font-size: 10px;
 }
+
+/* information */
 
 .checkout_information {
   position: absolute;
   top: 14.7em;
   left: 7.7em;
   width: 82em;
-  height: 39.3em;
-  background-color: green;
+  height: 40.5em;
 }
+
+.checkout_information h2 {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 2.8em;
+  color: #AD7252;
+  width: 6em;
+  height: 1.8em;
+  line-height: 1.8em;
+  font-weight: 400;
+}
+
+.checkout_input {
+  float: right;
+  position: relative;
+  width: 73.4em;
+  height: 4.4em;
+  margin-top: 3.2em;
+  display: flex;
+  align-items: center;
+}
+
+.checkout_input:first-of-type {
+  margin-top: 21px;
+}
+
+.checkout_input:last-of-type {
+  width: 60.5em;
+  margin-top: 1.8em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout_input label {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 2.4em;
+  color: #473C38;
+  margin-right: 2.3em;
+}
+
+.checkout_input input, 
+.checkout_input select {
+  position: absolute;
+  right: 0;
+  width: 33.6em;
+  height: 2.3em;
+  outline: 0;
+  border-radius: 5px;
+  border: 1px solid #D1B7A1;
+  color: #473C38;
+  background-color: #EAE3D9;
+  font-size: 1.8em;
+  padding: 0 15px;
+}
+
+.checkout_input input:focus {
+  border: 2px solid #c7a08a;
+}
+
+.checkout_input:last-of-type select {
+  position: relative;
+  width: 10.5em;
+}
+
+.checkout_input option {
+  color: #473C38;
+  background-color: #EAE3D9;
+}
+
+/* payment */
 
 .checkout_payment {
   position: absolute;
@@ -21,14 +91,167 @@
   left: 7.7em;
   width: 82em;
   height: 30.5em;
-  background-color: black;
 }
+
+.checkout_payment h2 {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 2.8em;
+  color: #AD7252;
+  width: 9em;
+  height: 1.8em;
+  line-height: 1.8em;
+  font-weight: 400;
+  margin-bottom: 0.75em;
+}
+
+.payment_container {
+  display: flex;
+  position: relative;
+  float: right;
+  font-size: 2.4em;
+  width: 30.6em;
+  height: 3.2em;
+  padding-left: 3.5em;
+  cursor: pointer;
+  align-items: center;
+  border: 1px solid #D1B7A1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.payment_container:nth-child(3) {
+  border-top: none;
+  pointer-events: none;
+}
+
+.payment_container h2 {
+  width: 20em;
+  height: 1em;
+  font-size: 1em;
+  color: #473C38;
+}
+
+.payment_container:nth-child(3) h2 {
+  color: #473C3850;
+}
+
+.payment_container input {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 30.7em;
+  height: 3.2em;
+}
+
+.payment_checkmark {
+  position: absolute;
+  top: 1em;
+  left: 1.4em;
+  height: 25px;
+  width: 25px;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.payment_container:nth-child(2) input:hover ~ .payment_checkmark {
+  background-color: #ccc;
+}
+
+.payment_container:nth-child(2) input:checked ~ .payment_checkmark {
+  background-color: #b46a29;
+}
+
+.checkout_payment a {
+  position: absolute;
+  top: 10.9em;
+  left: 3.6em;
+  color: #9C674B;
+  font-family: 'Poppins';
+  font-size: 2.4em;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.checkout_payment a:hover {
+  color: #553a31;
+}
+
+.checkout_payment button {
+  position: absolute;
+  right: 0;
+  top: 10em;
+  font-size: 2.4em;
+  color: #fff;
+  font-family: "Poppins";
+  font-weight: 500;
+  width: 13.5em;
+  height: 2.5em;
+  background-color: #AD7252;
+  outline: 0;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 100px 0 0 0 var(--boxColor);
+  transition: ease-out .3s .1s;
+}
+
+.checkout_payment button:hover {
+  box-shadow: inset 13.5em 0 0 0 #9C674B;
+}
+
+/* item */
 
 .checkout_item {
   position: absolute;
   top: 17.5em;
-  right: 8.2em;
+  left: 103.7em;
   width: 80.2em;
   height: 73em;
-  background-color: red;
+}
+
+.item_container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 86%;
+  overflow: auto;
+}
+
+.item_container::-webkit-scrollbar {
+  display: none;
+}
+
+.item_detail {
+  height: 11em;
+  margin-bottom: 18.5px;
+}
+
+.checkout_item hr {
+  margin-top: 66.8em;
+  color: #473C38;
+  height: 5px;
+}
+
+.item_total {
+  display: flex;
+  width: 80.1em;
+  height: 3.7em;
+  justify-content: space-between;
+}
+
+.item_total p {
+  font-family: "Poppins";
+  font-weight: 400;
+  align-self: center;
+  font-size: 2.8em;
+  color: #B06D40;
+}
+
+.item_total p:nth-child(1) {
+  color: #473C38;
+  font-weight: 300;
+  margin-right: 15em;
 }

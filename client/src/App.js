@@ -10,6 +10,7 @@ import AboutUs from "./components/publicPage/aboutUs";
 import ScrollToTop from "./utils/scrollToTop";
 import Product from "./components/publicPage/product";
 import Footer from "./components/headerFooter/footer";
+import Checkout from "./components/cart/checkout"
 export const AppContext = React.createContext();
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="product" element={<Product />} />
+            <Route path="checkout" element={<Checkout />} />
           </Routes>
         <Footer />
       </div>
