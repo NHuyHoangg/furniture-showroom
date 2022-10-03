@@ -5,6 +5,8 @@
 }
 
 .sign-up_container {
+    position: fixed;
+    z-index: 999;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     top: 0 ;
     left: 0;
@@ -19,7 +21,6 @@
 }
 
 .sign-up_wrapper {
-    /* transform: translateY(calc(0px - (100vh - 88em) / 4)); */
     position: relative;
     width: 67.5em;
     height: 88em;
@@ -31,8 +32,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 61.6em;
-    height: 82.5em;
+    width: calc(100% - 5.4em);
+    height: calc(100% - 5.4em);
     background-color: var(--backgroundColor);
     border: 1px solid #D1B7A1;
 }
@@ -184,8 +185,8 @@
     background-color: var(--boxColor);
     width: 52.5em;
     height: 7.5em;
-    box-shadow: inset 100px 0 0 0 var(--boxColor);
-    transition: ease-out .6s .1s;
+    box-shadow: inset 4.2em 0 0 0.00375em var(--boxColor);
+    transition: ease-out 0.9s;
     padding: 0;
 }
 
@@ -201,7 +202,7 @@
 }
 
 .sign-up_btn:hover > .sign-up_btn_submit {
-    box-shadow: inset 52.5em 0 0 0 #9C674B;
+    box-shadow: inset 52.5em 0 0 0.09px #9C674B;
 }
 
 .sign-up_btn_icon {

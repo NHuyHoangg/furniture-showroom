@@ -3,7 +3,20 @@
     --textColor: #473C38;
 }
 
-.history_sidebar {
+.history_container {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: var(--backgroundColor);
+    width: 100vw;
+    height: 100vh;
+    font-size: 10px;
+}
+
+/* sidebar */
+
+.sidebar_ctn {
     position: absolute;
     top: 0;
     left: 0;
@@ -13,18 +26,18 @@
     padding-top: 16.8em;
 }
 
-.history_sidebar_container {
+.sidebar_ele {
     position: relative;
     width: 100%;
     height: 9.1em;
     border-bottom: 3px solid #BAAF9E4D;
 }
 
-.history_sidebar_container:last-of-type {
+.sidebar_ele:last-of-type {
     border-bottom: 3px solid var(--backgroundColor);
 }
 
-.history_user_sidebar-btn {
+.sidebar_btn {
     position: absolute;
     top: 50%;
     left: 0%;
@@ -43,7 +56,7 @@
     text-align: left;
 }
 
-.history_user-icon {
+.sidebar_icon {
     position: absolute;
     top: 50%;
     left: 15%;
@@ -53,24 +66,19 @@
     pointer-events: none;
 }
 
-.history_user_sidebar-btn:hover {
+.sidebar_btn:hover {
+    background-color: #BAAF9E30;
+}
+
+.sidebar_ele .sidebar_focus:hover {
     background-color: #BAAF9E80;
 }
 
-.history_sidebar_focus {
+.sidebar_focus {
     background-color: #BAAF9E80;
 }
 
-.history_container {
-    font-family: "Poppins", Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: var(--backgroundColor);
-    width: 100vw;
-    height: 100vh;
-    font-size: 10px;
-}
+/* history content */
 
 .history_content {
     position: relative;
@@ -86,33 +94,43 @@
     display: none;
 }
 
-.history_search-container {
+.search_container {
     position: relative;
     width: 28.5em;
     height: 4em;
     margin-top: 5.6em;
 }
 
-.history_search {
+.search_container input {
     width: 100%;
     height: 100%;
     background-color: #DFDAD3;
     border-radius: 8px;
     border: 1px solid #D1B7A1;
-    padding-left: 4.2em;
+    padding-left: 2.3em;
+    font-size: 1.8rem;
 }
 
-.history_search::placeholder {
+.search_container input::placeholder {
     position: absolute;
     top: 52%;
     left: 15%;
     transform: translateY(-50%);
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
     color: rgba(71, 60, 56, 0.7);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 
-.history_search-icon {
+.search_container input:focus::placeholder {
+    color: transparent;
+}
+
+.search_container input:focus {
+    outline: none;
+    border: 3px solid #D1B7A1;
+}
+
+.search_container svg {
     position: absolute;
     top: 50%;
     left: 0;
@@ -121,11 +139,6 @@
     color: rgba(71, 60, 56, 0.7);
     pointer-events: none;
     margin-left: 0.4em;
-}
-
-.history_search:focus {
-    outline: none;
-    border: 3px solid #D1B7A1;
 }
 
 .history_table {
@@ -137,22 +150,18 @@
     justify-content: space-between;
 }
 
-.history_table-row {
+.table_row {
     position: relative;
     display: flex;
     flex-grow: 1;
     justify-content: space-around;
 }
 
-.history_table-row_shadow {
-    box-shadow: 2px 4px 4px 0px #00000040;
+.last-row_shadow {
+    box-shadow: 0px 4px 3px -1px #00000040;
 }
 
-.history_table-row_horizontal-shadow {
-    box-shadow: 2px 0px 2px 0px #00000040;
-}
-
-.history_table-head {
+.first_row .table_ele p {
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-size: 2rem;
     font-weight: 600;
@@ -163,17 +172,20 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
 }
 
-.history_table-element {
+.left_align {
+    text-align: left;
+}
+
+.table_ele {
     position: relative;
     flex-grow: 1;
     text-align: center;
     color: black;
 }
 
-.history_head-btn {
+.first_row .table_ele button {
     position: absolute;
     top: 50%;
     left: 90%;
@@ -186,7 +198,7 @@
     font-size: 1rem;
 }
 
-.history_head-icon {
+.first_row .table_ele i {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -196,7 +208,7 @@
     pointer-events: none;
 }
 
-.history_table_text {
+.table_ele p {
     position: absolute;
     top: 55%;
     left: 50%;
@@ -205,26 +217,22 @@
     font-size: 1.8rem;
     font-weight: 400;
     color: #473C38;
+    width: 100%;
 }
 
-.history_table_text_left-align {
-    left: 0;
-    transform: translateY(-50%);
-}
-
-.history_table-first {
+.first_row {
     background-color: rgba(186, 175, 158, 0.8);
 }
 
-.history_table-odd {
+.odd_row {
     background-color: rgba(186, 175, 158, 0.4);
 }
 
-.history_table-even {
+.even_row {
     background-color: #EAE3D9;
 }
 
-.history_table_download-btn {
+.table_ele .download_btn {
     font-size: 1rem;
     position: absolute;
     top: 52%;
@@ -237,11 +245,11 @@
     background-color: #EAE3D9;
 }
 
-.history_table_overwrite-bgr {
-    background-color: rgba(186, 175, 158, 0);
+.odd_row .table_ele .download_btn {
+    background-color: rgba(186, 175, 158, 0)
 }
 
-.history_download-icon {
+.download_btn svg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -252,7 +260,7 @@
     pointer-events: none;
 }
 
-.history_detail-btn {
+.table_ele button {
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     position: absolute;
     top: 50%;
@@ -281,7 +289,7 @@
     justify-content: space-around;
 }
 
-.history_pagination_link {
+.history_pagination a {
     position: relative;
     display: block;
     width: 4em;
@@ -292,7 +300,7 @@
     color: #000;
 }
 
-.history_pagination_link p {
+.history_pagination p {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -302,28 +310,30 @@
     font-size: 1.6rem;
 }
 
-.history_pagination-text {
+.history_pagination .text_pagination {
     background-color: var(--backgroundColor);
     margin-right: 1.2em;
     color: #9E9E9E;
 }
 
-.history_pagination-text p:hover {
+.text_pagination p:hover {
     text-decoration: underline;
     color: #000;
 }
 
-.history_pagination_link:hover:not(.history_pagination-text) {
+.history_pagination a:hover:not(.text_pagination) {
     color: #fff;
     background-color: #AD7252;
 }
 
-.history_pagination_link_focus {
+.history_pagination .pagination_focus {
     color: #fff;
     background-color: #AD7252;
 }
 
-.history_order_detail {
+/* Detail modal */
+
+.order_detail {
     position: fixed;
     border: none;
     margin: 0;
@@ -334,7 +344,7 @@
     z-index: 999;
 }
 
-.history_order_detail_wrapper {
+.order_detail_wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -345,14 +355,14 @@
     padding: 2.5em;
 }
 
-.history_detail_ctn {
+.order_detail_ctn {
     position: relative;
     width: 100%;
     height: 100%;
     border: 1px solid #D1B7A1;
 }
 
-.history_detail_info {
+.user_info {
     position: absolute;
     bottom: 4.325%;    
     float: left;
@@ -362,26 +372,31 @@
     padding-top: 3.1em;
 }
 
-.history_detail_user-info {
+.user_detail-info {
     position: absolute;
     left: 5%;
     width: 90%;
     height: calc(88.755% - 3.1em);
     border-bottom: 1px solid #D1B7A1;
+    overflow: auto;
 }
 
-.history_info {
+.user_detail-info::-webkit-scrollbar {
+    display: none;
+}
+
+.info_ctn {
     width: 100%;
-    margin-top: 3em;
+    margin-top: 1.5em;
     display: flex;
     justify-content: space-between;
 }
 
-.history_info:first-child {
+.info_ctn:first-child {
     margin-top: 0;
 }
 
-.history_info_title {
+.info_ctn p {
     width: 6.8em;
     color: #B06D40;
     font-size: 2rem;
@@ -389,15 +404,14 @@
     font-weight: 400;
 }
 
-.history_info_customer_detail {
+.info_ctn p:last-child {
     width: 12.8em;
     color: #553A31;
-    font-size: 2rem;
-    text-align: left;
     font-weight: 300;
+    line-height: 30px;
 }
 
-.history_detail_total {
+.user_total {
     position: absolute;
     bottom: 0;
     left: 5%;
@@ -408,7 +422,7 @@
     align-items: flex-start;
 }
 
-.history_info_text-total {
+.user_total p {
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: 300;
     font-size: 2.4rem;
@@ -416,15 +430,20 @@
     color: #553A31;
 }
 
-.history_info_number-total {
-    font-family: "Poppins", Arial, Helvetica, sans-serif;
-    font-weight: 400;
+.user_total p:last-child {
     font-size: 2.8rem;
-    line-height: 1.5em;
     color: #B06D40;
 }
 
-.history_detail_close-btn {
+.item_info {
+    position: relative;
+    width: 61.45%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+.item_info svg {
     position: absolute;
     right: 19px;
     top: 14px;
@@ -434,21 +453,13 @@
     font-size: 3rem;
 }
 
-.history_detail_close-btn:hover {
+.item_info svg:hover {
     transform: scale(1.2);
     cursor: pointer;
     color: #AD7252;
 }
 
-.history_detail_item {
-    position: relative;
-    width: 61.45%;
-    height: 100%;
-    position: absolute;
-    right: 0;
-}
-
-.history_detail_item-ctn {
+.item_ctn {
     position: absolute;
     top: 10%;
     left: 3.5%;
@@ -457,11 +468,11 @@
     overflow: auto;
 }
 
-.history_detail_item-ctn::-webkit-scrollbar {
+.item_ctn::-webkit-scrollbar {
     display: none;
 }
 
-.history_detail_item-info {
+.item_info_ctn {
     position: relative;
     width: 100%;
     height: 9em;
@@ -473,11 +484,11 @@
     align-items: center;
 }
 
-.history_detail_item-info:last-child {
+.item_info_ctn:last-child {
     margin-bottom: 0;
 }
 
-.history_detail_item-img {
+.item_img {
     position: absolute;
     left: 2.15%;
     width: 12.674%;
@@ -487,14 +498,14 @@
     border-radius: 5px;
 }
 
-.history_detail_item_name-cat {
+.item_name-cat {
     position: absolute;
     left: 17.5%;
     width: 47.5%;
     height: 72.5%;
 }
 
-.history_detail_item-name {
+.item_name-cat p {
     display: flex;
     align-items: center;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
@@ -505,18 +516,12 @@
     font-weight: 400;
 }
 
-.history_detail_item-cat {
-    display: flex;
-    align-items: center;
-    font-family: "Poppins", Arial, Helvetica, sans-serif;
-    width: 100%;
-    height: 50%;
+.item_name-cat p:nth-child(2) {
     color: #553A31;
     font-size: 1.8rem;
-    font-weight: 300;
 }
 
-.history_detail_amount {
+.item_info_ctn p:nth-child(3) {
     position: absolute;
     left: 68%;
     top: 50%;
@@ -533,7 +538,7 @@
     align-items: center;
 }
 
-.history_detail_item-price {
+.item_info_ctn p:nth-child(4) {
     position: absolute;
     top: 50%;
     right: 3.448%;
@@ -548,7 +553,7 @@
     text-align: right;
 }
 
-.history_hide-modal {
+.hide_modal {
     display: none;
 }
 

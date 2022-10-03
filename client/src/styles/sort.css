@@ -1,0 +1,78 @@
+.sort_ctn {
+  position: relative;
+  font-size: 10px;
+  width: 27em;
+  height: 3.6em;
+  z-index: 9;
+}
+
+.sort_ctn button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: #f0eae2;
+}
+
+.sort_ctn button span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #473C38;
+  font-size: 2.4em;
+  font-weight: 300;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.sort_ctn button i {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  color: #473C38;
+  font-size: 2.4em;
+}
+
+.sort-opts {
+  margin-top: 10px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 10px 0;
+  box-shadow: 1px 1px 8px #888888;
+  background-color: #f0eae2;
+  cursor: pointer;
+}
+
+.sort-opts a {
+  display: block;
+  width: 100%;
+  height: 5em;
+  text-decoration: none;
+}
+
+.sort-opts a h2 {
+  width: 100%;
+  height: 100%;
+  font-size: 2.4em;
+  font-weight: 300;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  color: #473C38;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.sort-opts a:hover h2 {
+  background-color: #a45b37;
+  color: #fff;
+}
+
+.sort-opts a .checked-opt {
+  color: #a45b37;
+}
+
+.hide-sort {
+  display: none;
+}
