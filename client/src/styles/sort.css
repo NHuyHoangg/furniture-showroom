@@ -37,13 +37,14 @@
 .sort-opts {
   margin-top: 10px;
   position: absolute;
-  left: 0%;
+  left: -2.5%;
   top: 100%;
-  width: 100%;
+  width: 105%;
   padding: 10px 0;
-  box-shadow: 1px 1px 8px #888888;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
   background-color: #f0eae2;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .sort-opts a {
@@ -57,21 +58,25 @@
   width: 100%;
   height: 100%;
   font-size: 2.4em;
-  font-weight: 300;
+  font-weight: 400;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   color: #473C38;
   display: flex;
   align-items: center;
-  padding: 0 15px;
+  padding: 0 25px;
 }
 
 .sort-opts a:hover h2 {
   background-color: #a45b37;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .sort-opts a .checked-opt {
   color: #a45b37;
+}
+
+.sort-opts a .checked-opt:hover {
+  color: #fff;
 }
 
 .hide-sort {
