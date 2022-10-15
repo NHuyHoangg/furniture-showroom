@@ -149,6 +149,9 @@
   .product_element:nth-child(15) {
     margin-bottom: 0;
   }
+  .product_row {
+    justify-content: space-around;
+  }  
 }
 
 @media only screen and (max-width: 1102px) {
