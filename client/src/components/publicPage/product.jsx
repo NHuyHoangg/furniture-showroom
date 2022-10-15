@@ -62,8 +62,46 @@ export default function Product() {
             <h2>Name of Item</h2>
             <p>$123</p>
           </div>
-        </div>
-        <div className="product_row">
+          <div className="product_element">
+            <img src="" alt="" />
+            <h2>Name of Item</h2>
+            <p>$123</p>
+          </div>
+          <div className="product_element">
+            <img src="" alt="" />
+            <h2>Name of Item</h2>
+            <p>$123</p>
+          </div>
+          <div className="product_element">
+            <img src="" alt="" />
+            <h2>Name of Item</h2>
+            <p>$123</p>
+          </div>
+          <div className="product_element">
+            <img src="" alt="" />
+            <h2>Name of Item</h2>
+            <p>$123</p>
+          </div>
+          <div className="product_element">
+            <img src="" alt="" />
+            <h2>Name of Item</h2>
+            <p>$123</p>
+          </div>
+          <div className="product_element">
+            <img src="" alt="" />
+            <h2>Name of Item</h2>
+            <p>$123</p>
+          </div>
+          <div className="product_element">
+            <img src="" alt="" />
+            <h2>Name of Item</h2>
+            <p>$123</p>
+          </div>
+          <div className="product_element">
+            <img src="" alt="" />
+            <h2>Name of Item</h2>
+            <p>$123</p>
+          </div>
           <div className="product_element">
             <img src="" alt="" />
             <h2>Name of Item</h2>
