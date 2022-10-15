@@ -83,7 +83,7 @@
 .product_row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .product_row:nth-child(2) {
