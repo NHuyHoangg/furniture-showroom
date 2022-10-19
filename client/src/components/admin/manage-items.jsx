@@ -38,7 +38,7 @@ export default function ManageItem() {
           <button 
             className="admin_add"
             onClick={() => {setButtonModal(!buttonModal); setModalVal(falseState);}} >
-              <i class="fa-solid fa-plus"></i>
+              Add new
           </button>
         </div>
         <div className="history_table">

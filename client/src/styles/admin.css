@@ -33,21 +33,22 @@
 .admin_add {
   position: absolute;
   top: 0;
-  right: -5em;
-  width: 4em;
-  height: 4em;
-  border-radius: 50%;
-  background-color: #AD7252;
+  right: -11rem;
+  width: 9.2rem;
+  height: 4rem;
+  border-radius: 8px;
+  background-color: #BAAF9EB2;
   outline: none;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.6rem;
+  color: #fff;
 }
 
-.admin_add i {
-  color: #fff;
-  font-size: 2em;
+.admin_add:hover {
+  background-color: #BAAF9E;
 }
 
 .admin_header {
