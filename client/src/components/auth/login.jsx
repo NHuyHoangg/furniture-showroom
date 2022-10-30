@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Axios } from "axios";
 import "../../styles/login.css";
 import "../../styles/signup.css";
 
-export default function Login( {setButtonSignUp, setButtonLogin, setLoggedIn } ) {
+export default function Login( { setButtonSignUp, setButtonLogin, setLoggedIn, setUser } ) {
   const navigate = useNavigate();
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState();
+
+  const HandleLogin = async () => {
+    Axios.post("http://localhost:8888/api/auth/login", {
+      email: document.forms["login"]["email"].value,
+      password: document.forms["login"]["password"].value,
+    })
+      .then((response) => {
+          setUser(response.data)
+          navigate("../")
+      })
+      .catch((error) => {
+          // helpers.setAlert(
+          //     {
+          //         type: "error",
+          //         message: error.response.data.message
+          //     }
+          // )
+          // helpers.setOpenAlert(true)
+      })
+  }
 
   return (
     <div className="login_container">
@@ -38,11 +61,12 @@ export default function Login( {setButtonSignUp, setButtonLogin, setLoggedIn } )
           <p className="login_para">
             Join us to savor good things in this life
           </p>
-          <form method="post" className="login_form">
+          <form method="post" name="login" className="login_form">
             <div className="login_form_text-field">
               <input
                 className="login_form_text-field_input"
                 type="email"
+                name="email"
                 autocomplete="off"
                 required
               />
@@ -52,6 +76,7 @@ export default function Login( {setButtonSignUp, setButtonLogin, setLoggedIn } )
               <input
                 className="login_form_text-field_input"
                 type="password"
+                name="password"
                 autocomplete="off"
                 required
               />
@@ -63,13 +88,7 @@ export default function Login( {setButtonSignUp, setButtonLogin, setLoggedIn } )
               </a>
             </div>
             <div className="login_sign-up_div">
-              <button className="login_sign-up-btn" type="submit" 
-                      onClick={()=>{
-                        setButtonLogin(false);
-                        setLoggedIn(true);
-                        navigate("../")
-                      }}
-              >
+              <button className="login_sign-up-btn" type="submit" onClick={()=>HandleLogin}>
                 <p>Enjoy now !</p>
                 {/* <i className="fa-solid fa-arrow-right-long fa-2x login_sign-up-btn_icon"></i> */}
                 <svg

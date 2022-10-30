@@ -20,12 +20,13 @@ function App() {
   Axios.defaults.withCredentials = true;
 
   const [site, setSite] = useState("spring");
+  const [user, setUser] = useState({});
 
   return (
     <AppContext.Provider>
       <div id="App">
         <ScrollToTop/>
-        <Header />
+        <Header setUser={setUser}/>
         <Routes>
           <Route index element={<Homepage site={site} setSite={setSite} />} />
           <Route path="user/history" element={<User tab={"history"} />} />
