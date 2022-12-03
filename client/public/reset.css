@@ -66,6 +66,10 @@ body{
 	font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
+img {
+	object-fit: contain;
+}
+
 ::-webkit-scrollbar-track {
   background-color: #dad2c7;
 }

@@ -113,7 +113,7 @@
     height: 36.1rem;
     top: 0;
     right:0;
-    background-color: #d9d9d9;
+    /* background-color: #d9d9d9; */
 }
 
 .homepage_spring .topic_image_2 {
@@ -122,7 +122,7 @@
     height: 68rem;
     bottom: 0;
     left: 0;
-    background-color: #d9d9d9;
+    /* background-color: #d9d9d9; */
 }
 
 .collection_button {
@@ -241,7 +241,7 @@
     left: 0;
     width: 94rem;
     height: 42rem;
-    background-color: #d9d9d9;
+    /* background-color: #d9d9d9; */
 }
 
 .homepage_summer .topic_image_2 {
@@ -250,7 +250,7 @@
     right: 0;
     width: 42rem;
     height: 59rem;
-    background-color: #d9d9d9;
+    /* background-color: #d9d9d9; */
 }
 
 .homepage_summer .topic_body {
@@ -320,7 +320,7 @@
     right: 0;
     width: 42rem;
     height: 50rem;
-    background-color: #d9d9d9;
+    /* background-color: #d9d9d9; */
 }
 
 .homepage_autumn .topic_image_2 {
@@ -329,7 +329,7 @@
     right: 44rem;
     width: 65rem;
     height: 56rem;
-    background-color: #d9d9d9;
+    /* background-color: #d9d9d9; */
 }
 
 .homepage_autumn .topic_body {
@@ -395,7 +395,7 @@
     right: 0;
     width: 89.6rem;
     height: 41.8rem;
-    background-color: #d9d9d9;
+    /* background-color: #d9d9d9; */
 }
 
 .homepage_winter .topic_image_2 {
@@ -404,7 +404,7 @@
     left: 0;
     width: 63.8rem;
     height: 44.8rem;
-    background-color: #d9d9d9;
+    /* background-color: #d9d9d9; */
 }
 
 .homepage_winter .topic_body {

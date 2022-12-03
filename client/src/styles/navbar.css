@@ -176,6 +176,8 @@ svg:hover.icon-hover {
   line-height: 42px;
   align-items: center;
   color: var(--textColorNav);
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .vr {
@@ -239,6 +241,7 @@ svg:focus {
   width: 293.07px;
   height: 277.88px;
   display: none;
+  z-index: 999;
 }
 
 .user_icon:hover .logout_container {
@@ -310,4 +313,112 @@ svg:focus {
 
 .logout_button:hover {
   background-color: #d1b7a1;
+}
+
+/* collection dropdown menu */
+
+.navbar_collection_menu {
+  position: fixed;
+  top: 9rem;
+  left: 23.8rem;
+  width: 30rem;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+}
+
+.navbar_collection_menu button {
+  font-size: 2.5rem;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 8rem;
+  display: block;
+  outline: none;
+  border: none;
+  background-color: rgba(186, 175, 158, 0.5);
+  z-index: 999;
+  backdrop-filter: blur(50px);
+  color: var(--textColorNav);
+}
+
+.navbar_collection_menu button:hover {
+  background-color: rgba(186, 175, 158, 0.75);
+}
+
+.navbar_collection_menu .hover-underline-animation:after {
+  bottom: 0px;
+}
+
+/* respon navbar */
+
+.navbar_icon {
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  font-size: 4rem;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar_icon:hover {
+  color: #ad7252;
+}
+
+@media only screen and (max-width: 1200px) {
+  .navbar_icon {
+    display: block;
+  }
+  .navbar_ul:nth-child(3) {
+    width: 25rem;
+    height: calc(100vh - 9rem);
+    background-color: #ad7252;
+    position: absolute;
+    right: -25rem;
+    bottom: calc(9rem - 100vh);
+    transition: ease-in-out .2s .1s;
+    background-color: rgba(186, 175, 158);
+    backdrop-filter: blur(50px);
+  }
+  .navbar_ul:nth-child(3) .navbar_list:nth-child(1) {
+    width: 100%;
+    height: 18rem;
+    display: block;
+  }
+  .navbar_ul:nth-child(3) .navbar_list:nth-child(1) .right_nav {
+    height: 9rem;
+  }
+  .navbar_ul:nth-child(3) .navbar_list:nth-child(2),
+  .navbar_ul:nth-child(3) .navbar_list:nth-child(3),
+  .navbar_ul:nth-child(3) .navbar_list:nth-child(4),
+  .navbar_ul:nth-child(3) .navbar_list:nth-child(5),
+  .navbar_ul:nth-child(3) .navbar_list:nth-child(6) {
+    width: 100%;
+    display: block;
+  }
+  .navbar_ul:nth-child(3) .navbar_a {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar_ul:nth-child(3) .navbar_button_auth {
+    width: 100%;
+    height: 9rem;
+    display: block;
+
+  }
+  .navbar .transform_navbar {
+    transition: ease-in-out .2s .1s;
+    position: absolute;
+    right: 0;
+  }
+  .logout_container {
+    position: relative;
+  }
+  .right_nav {
+    padding: 0;
+  }
 }

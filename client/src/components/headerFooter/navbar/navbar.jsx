@@ -6,11 +6,24 @@ import "../../../styles/login.css";
 import Login from "../../auth/login";
 import Signup from "../../auth/signup";
 
-export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer} ) {
+export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer, setSiteCollection} ) {
   const [buttonSignUp, setButtonSignUp] = useState(false);
   const [buttonLogin, setButtonLogin] = useState(false);
+  const [buttonCollection, setButtonCollection] = useState(false);
+  const [buttonMenu, setButtonMenu] = useState(false);
+  const [responMenu, setResponMenu] = useState(false);
+  const [widthTracer, setWidthTracer] = useState(window.innerWidth);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  const updateDimensions = () => {
+    setWidthTracer(window.innerWidth);
+  } 
 
   useEffect(() => {
     document
@@ -60,36 +73,45 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer} 
       </div>
 
       <div className="navbar">
-
+        <i 
+          class="fa-solid fa-bars navbar_icon"
+          onClick={() => setResponMenu(!responMenu)}>
+        </i>
         <ul className="navbar_ul">
-          <li className="navbar_list" onClick={() => {navigate("../"); setHeaderNav("");}}>
-            <a href="#collection" className="navbar_a a_hover" >
-              <div className="hover-underline-animation">Collection</div>
-            </a>
-          </li>
-          <li className="navbar_list margin_nav" onClick={() => {navigate("../product"); setHeaderNav("");}}>
-            <a className="navbar_a a_hover">
-              <div className="hover-underline-animation">Product</div>
-            </a>
-          </li>
-          <li className="navbar_list margin_nav" onClick={() => {navigate("../about-us"); setHeaderNav("header_ctn");}}>
-            <a className="navbar_a a_hover">
-              <div className="hover-underline-animation">About us</div>
-            </a>
-          </li>
+          {widthTracer > 500 &&
+            <li 
+              className="navbar_list" 
+              onClick={() => setHeaderNav("")}
+              onMouseEnter={() => setButtonCollection(true)}
+              onMouseLeave={() => setButtonCollection(false)}>
+                <a href="#" className="navbar_a a_hover" >
+                  <div className="hover-underline-animation">Collection</div>
+                </a>
+            </li>}
+          {widthTracer > 700 &&
+            <li className="navbar_list margin_nav" onClick={() => {navigate("../product"); setHeaderNav("");}}>
+              <a className="navbar_a a_hover">
+                <div className="hover-underline-animation">Product</div>
+              </a>
+            </li>}
+          {widthTracer > 950 &&
+            <li className="navbar_list margin_nav" onClick={() => {navigate("../about-us"); setHeaderNav("header_ctn");}}>
+              <a className="navbar_a a_hover">
+                <div className="hover-underline-animation">About us</div>
+              </a>
+            </li>}
         </ul>
 
-        <ul className="navbar_ul">
+        <ul className={"navbar_ul " + (responMenu && "transform_navbar")}>
           <li className="navbar_list">
-            <div className="navbar_a ">
+            <div className="navbar_a">
               <button
                 className="navbar_button_auth"
                 onClick={() => {setButtonLogin(true); setHeaderNav("");}}
               >
                 <div className="hover-underline-animation">Login</div>
               </button>
-              &nbsp;
-              <div className="vr"></div> &thinsp;
+              {widthTracer > 1200 ? <div className="vr"></div> : ""}
               <button
                 className="navbar_button_auth"
                 onClick={() => {setButtonSignUp(true); setHeaderNav("");}}
@@ -98,10 +120,72 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer} 
               </button>
             </div>
           </li>
+          {widthTracer <= 950 &&
+            <li className="navbar_list" onClick={() => {navigate("../about-us"); setHeaderNav("header_ctn");}}>
+              <a className="navbar_a a_hover">
+                <div className="hover-underline-animation">About us</div>
+              </a>
+            </li>}
+          {widthTracer <= 700 &&
+            <li className="navbar_list" onClick={() => {navigate("../product"); setHeaderNav("");}}>
+              <a className="navbar_a a_hover">
+                <div className="hover-underline-animation">Product</div>
+              </a>
+            </li>}
+          {widthTracer <= 500 &&
+            <li 
+              className="navbar_list" 
+              onClick={() => setHeaderNav("")}
+              onMouseEnter={() => setButtonCollection(true)}
+              onMouseLeave={() => setButtonCollection(false)}>
+                <a href="#" className="navbar_a a_hover" >
+                  <div className="hover-underline-animation">Collection</div>
+                </a>
+            </li>}
         </ul>
       </div>
       {buttonLogin && <Login setButtonSignUp={setButtonSignUp} setButtonLogin={setButtonLogin} setLoggedIn={setLoggedIn}/>}
+      
       {buttonSignUp && <Signup setButtonSignUp={setButtonSignUp} setButtonLogin={setButtonLogin}/>}
+
+      {(buttonMenu || buttonCollection) &&
+        <div 
+          className="navbar_collection_menu"
+          onMouseEnter={() => setButtonMenu(true)}
+          onMouseLeave={() => setButtonMenu(false)}>
+          <button 
+            onClick={() => {
+              setSiteCollection('spring');
+              navigate("../collection-detail/spring")}}>
+                <div className="hover-underline-animation">
+                  Spring
+                </div>
+          </button>
+          <button 
+            onClick={() => {
+              setSiteCollection('summer');
+              navigate("../collection-detail/summer")}}>
+                <div className="hover-underline-animation">
+                  Summer
+                </div>
+          </button>
+          <button 
+            onClick={() => {
+              setSiteCollection('autumn');
+              navigate("../collection-detail/autumn")}}>
+                <div className="hover-underline-animation">
+                  Autumn
+                </div>
+          </button>
+          <button 
+            onClick={() => {
+              setSiteCollection('winter');
+              navigate("../collection-detail/winter")}}>
+                <div className="hover-underline-animation">
+                  Winter
+                </div>
+          </button>
+        </div>}
     </div>
   );
 }

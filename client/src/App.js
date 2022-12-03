@@ -121,7 +121,7 @@ function App() {
         {openAlert && <Alert alert={alert} setOpenAlert={setOpenAlert} />}
         <ScrollToTop />
         <Analytics />
-        <Header />
+        <Header setSite={setSite} />
         {openLoading ? <Loading /> :
         <Routes>
           <Route

@@ -1,11 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/admin.css";
 import Sort from "../publicPage/sort";
+import Alert from "../helper/alert";
 
 export default function UpdateAdd(props) {
 
   const season = ["Summer", "Autumn", "Winter"];
   const color = ["Yellow", "Green"];
+
+  const [price, setPrice] = useState(-1);
+  const [discountPrice, setDiscountPrice] = useState(-2);
+
+  const [openAlert, setOpenAlert] = useState(false);
+  const [alert, setAlert] = useState({ type: "", message: "" });
+
+  const checkPrice = () => {
+    if(price < discountPrice) {
+      setAlert({type: "error", message: "Price can't be greater than Discount Price"});
+      setOpenAlert(true);
+    }
+  }
 
   useEffect(() => {
     var inputs = document.querySelectorAll( '.admin_input_tmp' );
@@ -32,6 +46,7 @@ export default function UpdateAdd(props) {
   
   return props.trigger[0] ? (
     <div className="sign-up_container">
+      {openAlert && <Alert alert={alert} setOpenAlert={setOpenAlert} />}
       <div className="sign-up_wrapper admin_fix_modal">
         <div className="sign-up_ctr admin-modal_ctr">
           <div className="sign-up_icon">
@@ -90,9 +105,18 @@ export default function UpdateAdd(props) {
               </div>
             </div>
             <div className="admin_input">
+              <div className="admin_choosen">
+                <label className="display_block">Price</label>
+                <input className="admin_input_text" type="text" onChange={(e) => setPrice(e.target.value)}/>
+              </div>
+              <div className="admin_choosen">
+                <label className="display_block">Discount Price</label>
+                <input className="admin_input_text" type="text" onChange={(e) => setDiscountPrice(e.target.value)}/>
+              </div>
+            </div>
+            <div className="admin_input">
               <label className="display_block">Image</label>
               <input 
-                className="admin_input_tmp" 
                 type="file" 
                 name="file" 
                 id="file" 
@@ -113,7 +137,7 @@ export default function UpdateAdd(props) {
               </textarea>
             </div>
           </div>
-          <button type="submit" className="admin_save">
+          <button type="submit" className="admin_save" onClick={() => checkPrice()}>
             Save
           </button>
         </div>

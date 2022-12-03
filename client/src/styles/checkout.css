@@ -58,14 +58,14 @@
 .checkout_input input {
   position: absolute;
   right: 0;
-  width: 33.6em;
+  width: 31.85em;
   height: 2.35em;
   outline: 0;
   border-radius: 5px;
   border: 1px solid #D1B7A1;
   color: #473C38;
   background-color: #EAE3D9;
-  font-size: 1.8em;
+  font-size: 1.9em;
   padding: 0 15px;
 }
 

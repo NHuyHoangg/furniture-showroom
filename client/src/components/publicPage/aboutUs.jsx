@@ -72,7 +72,9 @@ export default function AboutUs( {setAlert, setOpenAlert} ) {
             <img src="../img/aboutUs2.jpg" alt="#" className="aboutUs_info_img" />
             <img src="../img/aboutUs3.jpg" alt="#" className="aboutUs_info_img" />
         </section>
-        <section className="aboutUs_founder"></section>
+        <section className="aboutUs_founder">
+            <img src="../img/aboutUs4.jpg" alt="#" />
+        </section>
         <section className="aboutUs_contact-us">
             <div className="aboutUs_contact-us_wrapper">
                 <div className="aboutUs_contact-info">
