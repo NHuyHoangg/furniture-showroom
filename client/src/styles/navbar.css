@@ -58,7 +58,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 90px;
 }
 
@@ -321,7 +321,7 @@ svg:focus {
   position: fixed;
   top: 9rem;
   left: 23.8rem;
-  width: 30rem;
+  width: 20.5rem;
   z-index: 999;
   box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
 }
@@ -415,10 +415,28 @@ svg:focus {
     position: absolute;
     right: 0;
   }
-  .logout_container {
-    position: relative;
-  }
   .right_nav {
     padding: 0;
+  }
+  .navbar_collection_menu {
+    top: 9rem;
+    left: 23.2rem;
+  }
+  .logout_container {
+    top: 180px;
+    left: -250px;
+  }
+  .logout_container:after {
+    top: 30px;
+    right: -19px;
+    transform: rotate(45deg);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar_collection_menu {
+    top: 45rem;
+    left: 2.4rem;
+    width: 20.5rem;
   }
 }

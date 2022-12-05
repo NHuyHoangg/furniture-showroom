@@ -1,9 +1,11 @@
-import React from "react";
+import React , { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/checkout.css";
 import Sort from "../publicPage/sort";
 
 export default function Checkout( { setFilterCollection, setFilterCategory, setAlert, setOpenAlert} ) {
+
+  const [widthTracer, setWidthTracer] = useState(window.innerWidth);
 
   const navigate = useNavigate();
 
@@ -21,6 +23,15 @@ export default function Checkout( { setFilterCollection, setFilterCategory, setA
     setFilterCategory('All');
     setFilterCollection('All');
     navigate("../")
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  const updateDimensions = () => {
+    setWidthTracer(window.innerWidth);
   }
 
   return (
@@ -61,16 +72,19 @@ export default function Checkout( { setFilterCollection, setFilterCategory, setA
           <input type="radio" name="radio" />
           <span className="payment_checkmark"></span>
         </div>
-        <p onClick={()=>{
-          setFilterCategory('All');
-          setFilterCollection('All');
-          navigate("../product")
-        }}>
-          Return to shop
-        </p>
-        <button onClick={()=>handlePayUp()}>
-          Pay up
-        </button>
+        {widthTracer > 1500 && 
+          <div className="payment_method">
+            <p onClick={()=>{
+              setFilterCategory('All');
+              setFilterCollection('All');
+              navigate("../product")
+            }}>
+              Return to shop
+            </p>
+            <button onClick={()=>handlePayUp()}>
+              Pay up
+            </button>
+          </div>}
       </div>
       <div className="checkout_item">
         <div className="item_container">
@@ -153,6 +167,19 @@ export default function Checkout( { setFilterCollection, setFilterCategory, setA
           <p>03</p>
           <p>$1000000</p>
         </div>
+        {widthTracer <= 1500 && 
+          <div className="payment_method">
+            <p onClick={()=>{
+              setFilterCategory('All');
+              setFilterCollection('All');
+              navigate("../product")
+            }}>
+              Return to shop
+            </p>
+            <button onClick={()=>handlePayUp()}>
+              Pay up
+            </button>
+          </div>}
       </div>
     </div>
   );

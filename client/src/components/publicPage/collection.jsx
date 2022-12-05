@@ -25,14 +25,14 @@ export default function Collection ( {site, springRecommend, summerRecommend, au
         <div className="collection_background">
             <div className="collection_wallpaper">
                 <img src={"../img/collection-" + (site) + "1.jpg"} alt="" />
-                <div className={"collection_title " + site}>
-                    <h1>{site.toUpperCase()}</h1>
-                </div>
             </div>
 
             <div className="collection_part_1">
                 <img src={"../img/collection-" + (site) + "2.jpg"} alt="image 1" className="collection_image_1" />
                 <div className="collection_descr_1">
+                    <div className={"collection_title " + site}>
+                        <h1>{site.toUpperCase()}</h1>
+                    </div>
                     <h1 className={site}>About collection</h1>
                     <p>The self-study lessons in this section are written and organised according to the levels of the Common European Framework of Reference for languages (CEFR). There are different types of texts and interactive exercises that practise the reading skills you need to do well in your studies, to get ahead at work and to communicate in English in your free time. The self-study lessons in this section are written and organised according to the levels of the Common European Framework of Reference for languages (CEFR).</p>
                 </div>

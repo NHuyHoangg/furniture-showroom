@@ -37,7 +37,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
       <div className="navbar">
         <i 
           class="fa-solid fa-bars navbar_icon"
-          onClick={() => setResponMenu(!responMenu)}>
+          onClick={() => setTimeout(function() { setResponMenu(!responMenu);}, 100)}>
         </i>
         <ul className="navbar_ul">
           {widthTracer > 500 &&
@@ -240,7 +240,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
           </li>
         </ul>
       </div>
-      <Cart trigger={buttonCart} setTrigger={setButtonCart} />
+      {responMenu && <Cart trigger={buttonCart} setTrigger={setButtonCart} />}
       {(buttonMenu || buttonCollection) &&
         <div 
           className="navbar_collection_menu"

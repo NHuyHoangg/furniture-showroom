@@ -158,7 +158,7 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer, 
               setSiteCollection('spring');
               navigate("../collection-detail/spring")}}>
                 <div className="hover-underline-animation">
-                  Spring
+                  <p>Spring</p>
                 </div>
           </button>
           <button 

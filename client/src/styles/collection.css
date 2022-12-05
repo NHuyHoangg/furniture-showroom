@@ -23,6 +23,14 @@
     height: 81rem;
     /* background-color: #d9d9d9; */
     position: relative;
+    overflow: hidden;
+    object-fit: contain;
+}
+
+.collection_wallpaper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .collection_wallpaper .spring h1 {
@@ -69,11 +77,12 @@
     color: var(--winterColor);
 }
 
-.collection_title h1 {
-    font-size:  8rem;
+.collection_descr_1 .collection_title h1 {
+    font-size:  9rem;
     font-family: 'Cinzel Decorative';
-    margin-bottom: 3rem;
-    text-align: center;
+    margin-bottom: 6rem;
+    text-align: left;
+    font-weight: 500;
 }
 
 .collection_part_1 p {
@@ -120,7 +129,7 @@
 }
 
 .collection_descr_1 {
-    margin-top: 12rem;
+    margin-top: 13rem;
     margin-left: 103rem;   
 }
 
