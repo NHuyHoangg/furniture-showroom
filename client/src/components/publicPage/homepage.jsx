@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/homepage.css";
 
 export default function Homepage( {site, setSite, collectionProduct, setFilterCollection} ) {
   const navigate = useNavigate();
+
+  const [widthTracer, setWidthTracer] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, []);
+
+  const updateDimensions = () => {
+    setWidthTracer(window.innerWidth);
+  } 
 
   return (
     <div className="homepage_background">
@@ -14,16 +25,17 @@ export default function Homepage( {site, setSite, collectionProduct, setFilterCo
             <div className="title_name">HIFURDEZ</div>
             <div className="title_descr">High-end furniture design</div>
           </div>
-          <div className="introduce_slogan">
-            <p>Modern</p>
-            <p>Comfort</p>
-            <p>Coziness</p>
-            <div className="slogan_icon">
-              <i className="fa-brands fa-facebook"></i>
-              <i className="fa-brands fa-twitter"></i>
-              <i className="fa-brands fa-instagram"></i>
-            </div>
-          </div>
+          {widthTracer > 1400 && 
+            <div className="introduce_slogan">
+              <p>Modern</p>
+              <p>Comfort</p>
+              <p>Coziness</p>
+              <div className="slogan_icon">
+                <i className="fa-brands fa-facebook"></i>
+                <i className="fa-brands fa-twitter"></i>
+                <i className="fa-brands fa-instagram"></i>
+              </div>
+            </div>}
         </div>
 
         <div className="col-7 introduce_image">
@@ -31,17 +43,20 @@ export default function Homepage( {site, setSite, collectionProduct, setFilterCo
         </div>
 
       </div>
-          <div className="introduce_scroll">
-            <p>SCROLL</p>
-            <div></div>
-          </div>
+      
+      {widthTracer > 1400 && 
+        <div className="introduce_scroll">
+          <p>SCROLL</p>
+          <div></div>
+        </div>}
 
       <div id="collection" className="collection_container">
 
         <div className="homepage_spring">
-          <div className="topic_image_1">
-            <img src="../img/spring12.jpg" alt="" />
-          </div>
+          {widthTracer > 1800 &&
+            <div className="topic_image_1">
+              <img src="../img/spring12.jpg" alt="" />
+            </div>}
           <div className="topic_image_2">
             <img src="../img/spring2.jpg" alt="" />
           </div>
@@ -81,15 +96,16 @@ export default function Homepage( {site, setSite, collectionProduct, setFilterCo
         </div>
 
         <div className="homepage_summer">
-          <div className="homepage_summer_scroll"></div>
+          {widthTracer > 1400 && <div className="homepage_summer_scroll"></div>}
 
           <div className="topic_image_1">
             <img src="../img/homepageSummer.jpg" alt="" />
           </div>
 
-          <div className="topic_image_2">
-            <img src="../img/homepageSummer1.jpg" alt="" />
-          </div>
+          {widthTracer > 1800 &&
+            <div className="topic_image_2">
+              <img src="../img/homepageSummer1.jpg" alt="" />
+            </div>}
 
           <div className="topic_body">
             <div className="title_sub-name">Collection</div>
@@ -127,11 +143,12 @@ export default function Homepage( {site, setSite, collectionProduct, setFilterCo
         </div>
 
         <div className="homepage_autumn">
-          <div className="homepage_autumn_scroll"></div>
+          {widthTracer > 1400 && <div className="homepage_autumn_scroll"></div>}
 
-          <div className="topic_image_1">
-            <img src="../img/autumn2.jpg" alt="" />
-          </div>
+          {widthTracer > 1800 && 
+            <div className="topic_image_1">
+              <img src="../img/autumn2.jpg" alt="" />
+            </div>}
 
           <div className="topic_image_2">
             <img src="../img/autumn7.jpg" alt="" />
@@ -172,11 +189,12 @@ export default function Homepage( {site, setSite, collectionProduct, setFilterCo
         </div>
 
         <div className="homepage_winter">
-          <div className="homepage_winter_scroll"></div>
+          {widthTracer > 1400 && <div className="homepage_winter_scroll"></div>}
 
-          <div className="topic_image_1">
-            <img src="../img/winter14.jpg" alt="" />
-          </div>
+          {widthTracer > 1800 &&
+            <div className="topic_image_1">
+              <img src="../img/winter14.jpg" alt="" />
+            </div>}
 
           <div className="topic_image_2">
             <img src="../img/winter15.jpg" alt="" />

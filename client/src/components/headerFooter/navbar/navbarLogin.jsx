@@ -8,6 +8,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
   const [buttonCollection, setButtonCollection] = useState(false);
   const [buttonMenu, setButtonMenu] = useState(false);
   const [responMenu, setResponMenu] = useState(false);
+  const [blurMenu, setBlurMenu] = useState(false);
   const [widthTracer, setWidthTracer] = useState(window.innerWidth);
 
   const navigate = useNavigate();
@@ -20,6 +21,13 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
   const updateDimensions = () => {
     setWidthTracer(window.innerWidth);
   } 
+
+  const DelayBlur = () => {
+    if(blurMenu === false)
+      setTimeout(function() {setBlurMenu(!blurMenu);}, 200);
+    else
+      setTimeout(function() {setBlurMenu(!blurMenu);}, 100);
+  }
 
   return (
     <div className="header" 
@@ -37,7 +45,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
       <div className="navbar">
         <i 
           class="fa-solid fa-bars navbar_icon"
-          onClick={() => setTimeout(function() { setResponMenu(!responMenu);}, 100)}>
+          onClick={() => {setResponMenu(!responMenu); DelayBlur();}}>
         </i>
         <ul className="navbar_ul">
           {widthTracer > 500 &&
@@ -243,7 +251,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
       {responMenu && <Cart trigger={buttonCart} setTrigger={setButtonCart} />}
       {(buttonMenu || buttonCollection) &&
         <div 
-          className="navbar_collection_menu"
+          className="navbar_collection_menu login_collection"
           onMouseEnter={() => setButtonMenu(true)}
           onMouseLeave={() => setButtonMenu(false)}>
           <button 
@@ -279,6 +287,8 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
                 </div>
           </button>
         </div>}
+        {(widthTracer <= 1200 && blurMenu) &&
+          <div className="navbar_dummy"></div>}
     </div>
   );
 }

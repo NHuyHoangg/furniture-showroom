@@ -7,7 +7,7 @@
   left: 0;
   top: 0;
   transition: .3s ease-in;
-  z-index: 99;
+  z-index: 9999;
 }
 
 .header_scroll {
@@ -363,6 +363,16 @@ svg:focus {
   color: #ad7252;
 }
 
+.navbar_dummy {
+  position: absolute;
+  width: 25rem;
+  height: calc(100vh - 9rem);
+  right: 0;
+  bottom: calc(9rem - 100vh);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
 @media only screen and (max-width: 1200px) {
   .navbar_icon {
     display: block;
@@ -375,8 +385,8 @@ svg:focus {
     right: -25rem;
     bottom: calc(9rem - 100vh);
     transition: ease-in-out .2s .1s;
-    background-color: rgba(186, 175, 158);
-    backdrop-filter: blur(50px);
+    background-color: rgba(186, 175, 158, 0.5);
+    z-index: 999;
   }
   .navbar_ul:nth-child(3) .navbar_list:nth-child(1) {
     width: 100%;
@@ -434,9 +444,15 @@ svg:focus {
 }
 
 @media only screen and (max-width: 500px) {
-  .navbar_collection_menu {
-    top: 45rem;
-    left: 2.4rem;
-    width: 20.5rem;
+  .header .navbar_collection_menu {
+    top: 54rem;
+    left:auto;
+    right: 2rem;
+  }
+  .header .login_collection {
+    top: 63rem;
+  }
+  .login_collection button {
+    height: 7rem;
   }
 }

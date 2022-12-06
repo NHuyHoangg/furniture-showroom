@@ -12,6 +12,7 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer, 
   const [buttonCollection, setButtonCollection] = useState(false);
   const [buttonMenu, setButtonMenu] = useState(false);
   const [responMenu, setResponMenu] = useState(false);
+  const [blurMenu, setBlurMenu] = useState(false);
   const [widthTracer, setWidthTracer] = useState(window.innerWidth);
 
   const navigate = useNavigate();
@@ -24,6 +25,13 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer, 
   const updateDimensions = () => {
     setWidthTracer(window.innerWidth);
   } 
+
+  const DelayBlur = () => {
+    if(blurMenu === false)
+      setTimeout(function() {setBlurMenu(!blurMenu);}, 200);
+    else
+      setTimeout(function() {setBlurMenu(!blurMenu);}, 100);
+  }
 
   useEffect(() => {
     document
@@ -75,7 +83,7 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer, 
       <div className="navbar">
         <i 
           class="fa-solid fa-bars navbar_icon"
-          onClick={() => setResponMenu(!responMenu)}>
+          onClick={() => {setResponMenu(!responMenu); DelayBlur();}}>
         </i>
         <ul className="navbar_ul">
           {widthTracer > 500 &&
@@ -186,6 +194,8 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer, 
                 </div>
           </button>
         </div>}
+      {(widthTracer <= 1200 && blurMenu) &&
+        <div className="navbar_dummy"></div>}
     </div>
   );
 }
