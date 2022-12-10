@@ -45,7 +45,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
       <div className="navbar">
         <i 
           class="fa-solid fa-bars navbar_icon"
-          onClick={() => {setResponMenu(!responMenu); DelayBlur();}}>
+          onClick={() => {setResponMenu(!responMenu); DelayBlur(); setButtonCart(false);}}>
         </i>
         <ul className="navbar_ul">
           {widthTracer > 500 &&
@@ -140,7 +140,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
                 viewBox="0 0 24 24"
                 strokeWidth={0.5}
                 stroke="currentColor"
-                className="w-6 h-6 nav-btn icon-hover user_icon_hover"
+                className="w-6 h-6 nav-btn icon-hover"
                 color="black"
                 onClick={() => {navigate("../user"); setHeaderNav("");}}
               >
@@ -157,7 +157,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
                   <p className="logout_name"> $&#123;Full name&#125;</p>
                   <div className="logout_icon">
                     <button
-                      className="logout_button logout_hover"
+                      className="logout_button"
                       onClick={() => {{
                         navigate("../user/info"); setHeaderNav("");};
                       }}
@@ -179,7 +179,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
                     </button>
 
                     <button
-                      className="logout_button logout_hover"
+                      className="logout_button"
                       onClick={() => {{
                         navigate("../user/history"); setHeaderNav("");};
                       }}
@@ -203,7 +203,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
                     {/* Temp change NAV bar  */}
                     {/* Temp change NAV bar  */}
                     <button
-                      className="logout_button logout_button_footer"
+                      className="logout_button"
                       onClick={() => {
                         setLoggedIn(false);
                         navigate("../");
@@ -248,7 +248,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
           </li>
         </ul>
       </div>
-      {responMenu && <Cart trigger={buttonCart} setTrigger={setButtonCart} />}
+      {widthTracer > 1200 ? <Cart trigger={buttonCart} setTrigger={setButtonCart} /> : (responMenu && <Cart trigger={buttonCart} setTrigger={setButtonCart} />)}
       {(buttonMenu || buttonCollection) &&
         <div 
           className="navbar_collection_menu login_collection"

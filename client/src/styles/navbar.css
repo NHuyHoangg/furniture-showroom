@@ -3,6 +3,7 @@
 }
 
 .header_ctn {
+  font-size: calc(100vh/929*10);
   position: fixed;
   left: 0;
   top: 0;
@@ -11,15 +12,15 @@
 }
 
 .header_scroll {
-  top: -90px;
+  top: -9.28em;
 }
-
+ 
 .dummy_navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 9rem;
+  height: 9.28em;
   z-index: 9;
 }
 
@@ -27,27 +28,50 @@
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 28px;
+  font-size: calc(100vh/929*10);
   color: var(--textColorNav);
 
   width: 100%;
-  height: 90px;
+  height: 9.28em;
 
   position: fixed;
   display: flex;
   z-index: 10;
 }
 
+/* Logo */
+
+.logo {
+  /* background-color: #f0eae2; */
+  height: 100%;
+  width: 10em;
+  font-size: 2.5em;
+  display: inline-flex;
+  margin-left: -0.2em;
+  backdrop-filter: blur(4px);
+}
+
+.logo_img {
+  position: absolute;
+  top: 0.4em;
+  width: 50%;
+  height: 2.8em;
+  cursor: pointer;
+  left: 2.8em;
+}
+
+/* Navbar */
+
 .navbar {
   display: inline-flex;
   justify-content: space-between;
 
   margin-top: 0;
-  width: calc(100% - 190px);
-  line-height: 42px;
+  width: calc(100% - 19em);
+  line-height: 4.2em;
 
-  max-height: 90px;
-  height: 90px;
+  max-height: 9.28em;
+  height: 9.28em;
   padding: 0;
 
   background-color: rgba(186, 175, 158, 0.5);
@@ -59,28 +83,28 @@
   margin: 0;
   padding: 0;
   /* overflow: hidden; */
-  height: 90px;
+  height: 100%;
 }
 
 .navbar_list {
   list-style: none;
   display: inline-block;
-  height: 90px;
+  /* height: 100%; */
 }
 .margin_nav {
-  margin-left: 15px;
+  margin-left: 1.5em;
 }
 
 .a_hover {
-  width: 205px;
+  width: 20.5em;
 }
 .navbar_a {
   list-style: none;
   display: inline-block;
   color: var(--textColorNav);
   text-align: center;
-  padding: 24px 33px;
-  margin-bottom: -25px;
+  padding: 2.1em 3.3em;
+  margin-bottom: -2.5em;
   text-decoration: none;
   cursor: default;
 }
@@ -97,13 +121,19 @@
 }
 
 .hover-underline-animation {
+  font-size: 2.8em;
   display: inline-block;
   position: relative;
   color: var(--textColorNav);
   cursor: pointer;
 }
 
+.navbar_ul .hover-underline-animation {
+  padding-top: 0.1em;
+}
+
 .nav-btn {
+  font-size: 2.8em;
   border: none;
   box-sizing: border-box;
   padding: 0;
@@ -111,10 +141,11 @@
   height: 1.326em;
 }
 
-svg:hover.nav-btn {
+.nav-btn:hover {
   cursor: pointer;
 }
-svg:hover.icon-hover {
+
+.icon-hover:hover {
   stroke-width: 1.5;
   cursor: pointer;
 }
@@ -124,8 +155,8 @@ svg:hover.icon-hover {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
-  bottom: 6px;
+  height: 0.07em;
+  bottom: 0.2em;
   left: 0;
   background-color: var(--textColorNav);
 
@@ -136,27 +167,7 @@ svg:hover.icon-hover {
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
-
   color: var(--textColorNav);
-}
-
-.logo {
-  /* background-color: #f0eae2; */
-  height: 90px;
-  width: 250px;
-  font-size: 25px;
-  display: inline-flex;
-  margin-left: -5px;
-  backdrop-filter: blur(4px);
-}
-
-.logo_img {
-  position: absolute;
-  top: 10px;
-  width: 125px;
-  height: 70.19px;
-  cursor: pointer;
-  left: 70px;
 }
 
 .navbar_button_auth {
@@ -169,43 +180,49 @@ svg:hover.icon-hover {
 
   display: inline-block;
 
-  font-size: 28px;
+  font-size: 2.8em;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 300;
-  line-height: 42px;
+  line-height: 1.5em;
   align-items: center;
   color: var(--textColorNav);
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 0.36em;
+  margin-right: 0.36em;
+  padding: 0;
+}
+
+.navbar_button_auth .hover-underline-animation {
+  font-size: 1em;
 }
 
 .vr {
   position: absolute;
-  width: 2.5px;
-  height: 42px;
+  width: 0.25em;
+  height: 4.48em;
 }
 
 .nav_search input {
   border: none;
   background: transparent;
-  font: 20px "Poppins", Arial, Helvetica, sans-serif;
+  font: 2em "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 300;
-
+  height: 100%;
   background: none;
   border-radius: 4px;
   transition: width 0.3s;
   width: 0px;
   padding: 0px;
 }
+
 .nav_search input:focus,
 .nav_search input:hover {
   border-color: #aaa;
   outline: none;
-  width: 220px;
-  padding: 8px 12px 8px 14px;
-  background: linear-gradient(#000, #000) center bottom 7px / calc(100% - 25px)
-    1px no-repeat;
+  width: 11em;
+  padding: 0em 1.4em 0.4em 1.2em;
+  background: linear-gradient(#000, #000) center bottom 0.25em / calc(100% - 2.5em)
+    0.05em no-repeat;
   color: black;
 }
 
@@ -222,24 +239,25 @@ svg:focus {
 }
 
 .right_nav {
-  padding: 24px 25px;
+  padding: 2.4em 2.5em;
 }
 
 .logout_container {
-  right: 10px;
+  font-size: 1em;
+  right: 1em;
   /* width: 200px; */
   background: #ffffff;
-  border: 1px solid #cad5e0;
-  padding: 10px;
+  border: 0.1em solid #cad5e0;
+  padding: 1em;
   position: absolute;
-  min-height: 200px;
-  top: 95px;
+  min-height: 20em;
+  top: 9.5em;
   background: #eae3d9;
-  border: 1px solid #d1b7a1;
+  border: 0.1em solid #d1b7a1;
   border-radius: 5px;
   user-select: none;
-  width: 293.07px;
-  height: 277.88px;
+  width: 29em;
+  height: 28em;
   display: none;
   z-index: 999;
 }
@@ -252,63 +270,70 @@ svg:focus {
   content: "";
   display: block;
   position: absolute;
-  top: -18px;
-  right: 15px;
-  width: 35px;
-  height: 35px;
+  top: -1.8em;
+  right: 1.5em;
+  width: 3.5em;
+  height: 3.5em;
   background: #eae3d9;
-  border-right: 1px solid #d1b7a1;
-  border-top: 1px solid #d1b7a1;
+  border-right: 0.1em solid #d1b7a1;
+  border-top: 0.1em solid #d1b7a1;
   /* rotate: -45deg; */
   transform: rotate(-45deg);
 }
 
 .logout_wrapper {
-  margin: 10px;
+  margin: 1em;
 }
 
 .logout_header {
-  font-size: 19px;
+  font-size: 1.9em;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   text-align: left;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 1.5em;
   color: #473c38;
-  margin-top: 10px;
+  margin-top: 0.53em;
 }
 
 .logout_name {
-  font-size: 22px;
+  font-size: 2.2em;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   text-align: center;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 1.3em;
   color: #ad7252;
-  border-bottom: 1px solid #473c38;
+  border-bottom: 0.0455em solid #473c38;
 }
 .logout_icon {
-  font-size: 18px;
+  font-size: 1.8em;
   text-align: center;
-  margin: 5px;
+  margin: 0.3em;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
 }
 
 .logout_button {
-  width: 232.46px;
-  height: 50px;
+  width: 12.9em;
+  height: 2.8em;
   text-align: left;
   border: none;
   background-color: #eae3d9;
-  margin-top: 10px;
+  margin-top: 0.56em;
+  padding: 0;
 }
 
-.logout_button_footer {
+.logout_button:nth-child(3) {
   color: #ad7252;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  width: 11.7em;
+  height: 2.5em;
+  text-align: left;
+  border: none;
+  background-color: #eae3d9;
+  margin-top: 0.5em;
 }
 
 .logout_button:hover {
@@ -318,19 +343,20 @@ svg:focus {
 /* collection dropdown menu */
 
 .navbar_collection_menu {
+  font-size: 1em;
   position: fixed;
-  top: 9rem;
-  left: 23.8rem;
-  width: 20.5rem;
+  top: 9em;
+  left: 23.8em;
+  width: 20.5em;
   z-index: 999;
   box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
 }
 
 .navbar_collection_menu button {
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   width: 100%;
-  height: 8rem;
+  height: 3.2em;
   display: block;
   outline: none;
   border: none;
@@ -348,13 +374,17 @@ svg:focus {
   bottom: 0px;
 }
 
+.navbar_collection_menu .hover-underline-animation {
+  font-size: 1em;
+}
+
 /* respon navbar */
 
 .navbar_icon {
   position: absolute;
-  top: 24px;
-  right: 20px;
-  font-size: 4rem;
+  top: 0.6em;
+  right: 0.5em;
+  font-size: 4em;
   cursor: pointer;
   display: none;
 }
@@ -365,36 +395,36 @@ svg:focus {
 
 .navbar_dummy {
   position: absolute;
-  width: 25rem;
-  height: calc(100vh - 9rem);
+  width: 25em;
+  height: calc(100vh - 9em);
   right: 0;
-  bottom: calc(9rem - 100vh);
+  bottom: calc(9em - 100vh);
   backdrop-filter: blur(50px);
   z-index: -1;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px), (min-height: 1400px), (height <= calc(width - 350px)) {
   .navbar_icon {
     display: block;
   }
   .navbar_ul:nth-child(3) {
-    width: 25rem;
-    height: calc(100vh - 9rem);
+    width: 25em;
+    height: calc(100vh - 9em);
     background-color: #ad7252;
     position: absolute;
-    right: -25rem;
-    bottom: calc(9rem - 100vh);
+    right: -25em;
+    bottom: calc(9em - 100vh);
     transition: ease-in-out .2s .1s;
     background-color: rgba(186, 175, 158, 0.5);
     z-index: 999;
   }
   .navbar_ul:nth-child(3) .navbar_list:nth-child(1) {
     width: 100%;
-    height: 18rem;
+    height: 18em;
     display: block;
   }
   .navbar_ul:nth-child(3) .navbar_list:nth-child(1) .right_nav {
-    height: 9rem;
+    height: 9em;
   }
   .navbar_ul:nth-child(3) .navbar_list:nth-child(2),
   .navbar_ul:nth-child(3) .navbar_list:nth-child(3),
@@ -402,6 +432,7 @@ svg:focus {
   .navbar_ul:nth-child(3) .navbar_list:nth-child(5),
   .navbar_ul:nth-child(3) .navbar_list:nth-child(6) {
     width: 100%;
+    height: 9em;
     display: block;
   }
   .navbar_ul:nth-child(3) .navbar_a {
@@ -416,7 +447,7 @@ svg:focus {
   }
   .navbar_ul:nth-child(3) .navbar_button_auth {
     width: 100%;
-    height: 9rem;
+    height: 9em;
     display: block;
 
   }
@@ -428,31 +459,34 @@ svg:focus {
   .right_nav {
     padding: 0;
   }
-  .navbar_collection_menu {
-    top: 9rem;
-    left: 23.2rem;
-  }
   .logout_container {
-    top: 180px;
-    left: -250px;
+    top: 18em;
+    left: -25em;
   }
   .logout_container:after {
-    top: 30px;
-    right: -19px;
+    top: 3em;
+    right: -1.9em;
     transform: rotate(45deg);
+  }
+  .nav_search input:focus,
+  .nav_search input:hover {
+    height: 70%;
+    padding: 0em 1.4em 1.1em 1.2em;
+    background: linear-gradient(#000, #000) center bottom 1.4em / calc(100% - 2.5em)
+      0.05em no-repeat;
   }
 }
 
 @media only screen and (max-width: 500px) {
   .header .navbar_collection_menu {
-    top: 54rem;
-    left:auto;
-    right: 2rem;
+    top: 54em;
+    left: auto;
+    right: 2em;
   }
   .header .login_collection {
-    top: 63rem;
+    top: 63em;
   }
   .login_collection button {
-    height: 7rem;
+    height: 2.7em;
   }
 }

@@ -86,7 +86,6 @@ export default function Signup( {setButtonSignUp, setButtonLogin } ) {
                   strokeWidth={0.1}
                   color="#fff"
                   className="sign-up-btn_icon"
-                  style={{ width: "60px", height: "50px" }}
                 >
                   <path
                     fillRule="evenodd"

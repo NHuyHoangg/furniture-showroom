@@ -14,6 +14,7 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer, 
   const [responMenu, setResponMenu] = useState(false);
   const [blurMenu, setBlurMenu] = useState(false);
   const [widthTracer, setWidthTracer] = useState(window.innerWidth);
+  const [heightTracer, setHeightTracer] = useState(window.innerHeight);
 
   const navigate = useNavigate();
 
@@ -24,6 +25,7 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer, 
 
   const updateDimensions = () => {
     setWidthTracer(window.innerWidth);
+    setHeightTracer(window.innerHeight);
   } 
 
   const DelayBlur = () => {
@@ -119,7 +121,7 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer, 
               >
                 <div className="hover-underline-animation">Login</div>
               </button>
-              {widthTracer > 1200 ? <div className="vr"></div> : ""}
+              {(widthTracer > 1200  && heightTracer < 1400) ? <div className="vr"></div> : ""}
               <button
                 className="navbar_button_auth"
                 onClick={() => {setButtonSignUp(true); setHeaderNav("");}}
@@ -194,7 +196,7 @@ export default function Navbar( {loggedIn, setLoggedIn, setHeaderNav, setTimer, 
                 </div>
           </button>
         </div>}
-      {(widthTracer <= 1200 && blurMenu) &&
+      {((widthTracer <= 1200 || heightTracer >= 1400) && blurMenu) &&
         <div className="navbar_dummy"></div>}
     </div>
   );

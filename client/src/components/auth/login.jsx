@@ -71,16 +71,13 @@ export default function Login( {setButtonSignUp, setButtonLogin, setLoggedIn } )
                       }}
               >
                 <p>Enjoy now !</p>
-                {/* <i className="fa-solid fa-arrow-right-long fa-2x login_sign-up-btn_icon"></i> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  // className="w-6 h-6"
                   strokeWidth={0.1}
                   color="#fff"
                   className="login_sign-up-btn_icon"
-                  style={{ width: "60px", height: "50px" }}
                 >
                   <path
                     fillRule="evenodd"

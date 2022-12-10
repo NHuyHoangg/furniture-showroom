@@ -74,6 +74,26 @@ export default function Cart(props) {
         onClick={() => props.setTrigger(false)}
       ></div>
       <div className="cart_wrapper">
+        <button
+          className="cart_close-btn"
+          onClick={() => props.setTrigger(false)}
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="1em" 
+            height="1em" 
+            preserveAspectRatio="xMidYMid meet" 
+            viewBox="0 0 32 32" 
+            className="cart_my-icon">
+            <path 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M2 30L30 2m0 28L2 2"/>
+          </svg>            
+        </button>
         <div className="cart_ctr">
           <h1 className="cart_header">Your Cart</h1>
           <div className="cart_item_list">
@@ -86,8 +106,37 @@ export default function Cart(props) {
               name="Wellington Sofa"
               collection="Heartfelt Winter"
               price="10000"
-            />
-            
+            />  
+            <CartItem
+              name="Wellington Sofa"
+              collection="Heartfelt Winter"
+              price="10000"
+            />  
+            <CartItem
+              name="Wellington Sofa"
+              collection="Heartfelt Winter"
+              price="10000"
+            />  
+            <CartItem
+              name="Wellington Sofa"
+              collection="Heartfelt Winter"
+              price="10000"
+            />  
+            <CartItem
+              name="Wellington Sofa"
+              collection="Heartfelt Winter"
+              price="10000"
+            />  
+            <CartItem
+              name="Wellington Sofa"
+              collection="Heartfelt Winter"
+              price="10000"
+            />  
+            <CartItem
+              name="Wellington Sofa"
+              collection="Heartfelt Winter"
+              price="10000"
+            />  
           </div>
 
           <div className="cart_footer">
@@ -103,7 +152,6 @@ export default function Cart(props) {
                 fill="currentColor"
                 color="#fff"
                 className="cart-btn_icon"
-                style={{ width: "55px", height: "55px" }}
               >
                 <path
                   fillRule="evenodd"

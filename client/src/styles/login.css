@@ -14,8 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-size: 20px;
+  font-size: calc(100vh/929*10);
 }
 
 .login_modal_close {
@@ -27,17 +26,14 @@
 }
 
 .login_wrapper {
-
-  width: 520px;
-  height: 570px;
-  padding: 1em;
+  width: 52em;
+  height: 57em;
+  padding: 2em;
   background-color: var(--backgroundColor);
   box-sizing: border-box;
-
   position: absolute;
   top: 15.28%;
   bottom: 15.28%;
-
 }
 
 .login_ctr {
@@ -46,27 +42,22 @@
   background-color: var(--backgroundColor);
   display: flex;
   flex-direction: column;
-  border: 0.05em solid #d1b7a1;
+  border: 0.1em solid #d1b7a1;
   align-items: center;
-
-  width: 480px;
-  height: 530px;
-  left: 720px;
-  top: 181px;
-
+  width: 48em;
+  height: 53em;
+  left: 72em;
+  top: 18em;
   box-sizing: border-box;
 }
 
 .login_icon {
-
-  right: 1.5em;
-  top: 1.3em;
-
+  right: 3em;
+  top: 2.6em;
   position: absolute;
-
 }
 
-svg:hover.login_close-btn {
+svg:hover .login_close-btn {
   fill: var(--boxColor);
 }
 
@@ -75,18 +66,14 @@ svg:hover.login_close-btn {
   background-color: var(--backgroundColor);
   box-sizing: border-box;
   padding: 0;
-  width: 1.326em;
-  height: 1.326em;
+  width: 2.65em;
+  height: 2.65em;
 }
-
-
 
 .login_header {
   position: absolute;
-
-  top: 58px;
-  font-size: 36px;
-
+  top: 1.6em;
+  font-size: 3.6em;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   text-align: center;
   font-weight: 300;
@@ -94,18 +81,14 @@ svg:hover.login_close-btn {
 }
 
 .login_para {
-
   position: absolute;
-
-  top: 97px;
-  width: 334px;
-  font-size: 16px;
-  margin-left: 5px;
+  top: 6.1em;
+  width: 20.9em;
+  font-size: 1.6em;
+  margin-left: 0.3em;
   text-align: center;
-
   padding-top: 0.5em;
-  padding-bottom: 20px;
-
+  padding-bottom: 1.25em;
   color: #553a31;
   font-weight: 300;
   border-bottom: 0.05em solid #bab0a7;
@@ -113,31 +96,27 @@ svg:hover.login_close-btn {
 
 .login_form {
   position: absolute;
-
-  width: 420px;
-  height: 70px;
-  margin-top: 165px;
-  left: 50px;
+  width: 42em;
+  height: 7em;
+  margin-top: 16.5em;
+  left: 5em;
 }
 
 .login_form_text-field {
   position: relative;
-
-  width: 420px;
-  height: 70px;
-  margin-bottom: 1.35em;
+  width: 42em;
+  height: 7em;
+  margin-bottom: 2.7em;
 }
 
 .login_form_text-field_input {
-  width: 420px;
-  height: 60px;
+  width: 23.3em;
+  height: 3.3em;
   position: absolute;
   font-weight: 300;
   left: 50%;
-
   padding: 0 1.55em;
-
-  font-size: 18px;
+  font-size: 1.8em;
   color: var(--textColor);
   background: none;
   outline: none;
@@ -148,40 +127,33 @@ svg:hover.login_close-btn {
 
 .login_form_text-field_label {
   position: absolute;
-
   left: 0.1em;
   top: 1em;
   transform: translateY(-40%);
   margin-left: 1.5em;
   color: rgb(71, 60, 56, 0.7);
-
   pointer-events: none;
   transition: 0.2s;
   background-color: var(--backgroundColor);
-
-  font-size: 20px;
+  font-size: 2em;
 }
-
 
 .login_form_text-field_input:focus {
   border: 0.1em solid #c7a08a;
 }
 
-.login_form_text-field_input:focus+.login_form_text-field_label,
-.login_form_filled {
-  top: -10px;
+.login_form_text-field_input:focus + .login_form_text-field_label {
+  top: -0.5em;
   color: #c7a08a;
-  padding: 1px;
+  padding: 0.05em;
   font-weight: bold;
 }
 
 .login_desc {
   position: absolute;
-   right: 0;
-  
-   margin-top: -24px;
-  /* margin-right: 31px; */
-  font-size: 16px;
+  right: 0;
+  margin-top: -1.5em;
+  font-size: 1.6em;
 }
 
 .login_link {
@@ -206,26 +178,19 @@ svg:hover.login_close-btn {
   position: absolute;
   align-items: center;
   padding-left: 0;
-
-  margin-top: 15px;
+  margin-top: 0.78em;
   left: 50%;
-
-  width: 420px;
-  height: 60px;
-
+  width: 21.88em;
+  height: 3.13em;
   transform: translateX(-50%);
-
   cursor: pointer;
   background-color: var(--boxColor);
   border: none;
   color: #fff;
   padding: 0.041666666666666664em;
-
-  font-size: 19.2px;
-
+  font-size: 1.92em;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
-
   box-shadow: inset 4.166666666666667em 0 0 0.00375em var(--boxColor);
   transition: ease-out 0.5s;
 }
@@ -236,32 +201,32 @@ svg:hover.login_close-btn {
 
 @keyframes wipe {
   from {
-    width: 100px;
+    width: 10em;
   }
 
   to {
-    width: 350px;
+    width: 35em;
   }
 }
 
 .login_sign-up-btn p {
-  padding-left: 30px;
+  padding-left: 1.56em;
 }
 
 .login_sign-up-btn_icon {
   color: #fff;
   margin: auto;
-  margin-right: 20px;
-  font-size: 30px;
+  margin-right: 0.35em;
+  font-size: 3em;
+  width: 1.04em;
+  height: 0.87em;
 }
 
 .login_signup-link {
-  font-size: 16px;
-
+  font-size: 1.6em;
   position: absolute;
-  left: 50px;
-  bottom: 66px;
-
+  left: 3.13em;
+  bottom: 4.13em;
   font-weight: 300;
   color: var(--textColor);
 }

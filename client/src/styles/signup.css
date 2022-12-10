@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 10px;
+    font-size: calc(100vh/929*10);
 }
 
 .sign-up_wrapper {
@@ -35,7 +35,7 @@
     width: calc(100% - 5.4em);
     height: calc(100% - 5.4em);
     background-color: var(--backgroundColor);
-    border: 1px solid #D1B7A1;
+    border: 0.1em solid #D1B7A1;
 }
 
 .sign-up_icon {
@@ -67,7 +67,7 @@
 }
 
 .sign-up_header {
-    font-size: 4.5rem;
+    font-size: 4.5em;
     font-family: "Poppins";
     width: 9em;
     height: 1.3em;
@@ -79,8 +79,8 @@
 }
 
 .sign-up_para {
-    font-size: 2rem;
-    border-bottom: 1px solid #bab0a7;
+    font-size: 2em;
+    border-bottom: 0.05em solid #bab0a7;
     width: 24em;
     height: 2.3em;
     color: var(--textColor);
@@ -115,10 +115,10 @@
 .sign-up_form_text-field_input {
     width: 100%;
     height: 100%;
-    font-size: 2rem;
+    font-size: 2em;
     background: none;
     outline: none;
-    border: 1px solid #c7a08a;
+    border: 0.05em solid #c7a08a;
     padding: 0 1.3em;
 }
 
@@ -128,7 +128,7 @@
     left: 5%;
     transform: translateY(-50%);
     color: #473C38B2;
-    font-size: 2rem;
+    font-size: 2em;
     transition: .2s;
     background-color: var(--backgroundColor);
     pointer-events: none;
@@ -136,7 +136,7 @@
 }
 
 .sign-up_form_text-field_input:focus {
-    border: 2px solid #c7a08a;
+    border: 0.05em solid #c7a08a;
     color: #473C38;
 }
 
@@ -152,7 +152,7 @@
 .sign-up_desc {
     width: 29em;
     height: 1.5em;
-    font-size: 1.8rem;
+    font-size: 1.8em;
     color: #473C38B2;
     line-height: 1.5em;
     font-weight: 300;
@@ -197,7 +197,7 @@
     left: 5.2%;
     transform: translateY(-50%);
     color: #fff;
-    font-size: 2.4rem;
+    font-size: 2.4em;
     font-weight: 500;
 }
 
@@ -208,10 +208,12 @@
 .sign-up-btn_icon {
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 0.67em;
     transform: translateY(-50%);
     color: #fff;
     font-size: 3em;
+    width: 2em;
+    height: 1.67em;
 }
 
 .sign-up_signup-link {
@@ -219,7 +221,7 @@
     height: 1.5em;
     margin-top: 0.5em;
     color: #473C38B2;
-    font-size: 2rem;
+    font-size: 2em;
     text-align: left;
     font-weight: 300;
 }
