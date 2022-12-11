@@ -129,7 +129,7 @@
     transform: translateY(-50%);
     color: #473C38B2;
     font-size: 2em;
-    transition: .2s;
+    transition: top .2s;
     background-color: var(--backgroundColor);
     pointer-events: none;
     text-align: left;
@@ -143,9 +143,9 @@
 .sign-up_form_text-field_input:focus + .sign-up_form_text-field_label,
 .sign-up_form_filled {
     top: 0px;
-    left: calc(1.3em - 3px);
+    left: calc(1.3em - 0.15em);
     color: #c7a08a;
-    padding: 4.5px;
+    padding: 0.225em;
     font-weight: 400;
 }
 
@@ -186,7 +186,7 @@
     width: 52.5em;
     height: 7.5em;
     box-shadow: inset 4.2em 0 0 0.00375em var(--boxColor);
-    transition: ease-out 0.5s;
+    transition: box-shadow ease-out 0.5s;
     padding: 0;
 }
 

@@ -115,7 +115,7 @@ svg:hover .login_close-btn {
   position: absolute;
   font-weight: 300;
   left: 50%;
-  padding: 0 1.55em;
+  padding: 0 1.4em;
   font-size: 1.8em;
   color: var(--textColor);
   background: none;
@@ -127,26 +127,28 @@ svg:hover .login_close-btn {
 
 .login_form_text-field_label {
   position: absolute;
-  left: 0.1em;
-  top: 1em;
-  transform: translateY(-40%);
-  margin-left: 1.5em;
-  color: rgb(71, 60, 56, 0.7);
-  pointer-events: none;
-  transition: 0.2s;
-  background-color: var(--backgroundColor);
+  top: 27%;
+  left: 5.5%;
+  transform: translateY(-50%);
+  color: #473C38B2;
   font-size: 2em;
+  transition: top .2s;
+  background-color: var(--backgroundColor);
+  pointer-events: none;
+  text-align: left;
 }
 
 .login_form_text-field_input:focus {
   border: 0.1em solid #c7a08a;
 }
 
-.login_form_text-field_input:focus + .login_form_text-field_label {
+.login_form_text-field_input:focus + .login_form_text-field_label,
+.login_form_filled {
   top: -0.5em;
+  left: calc(0.8em);
   color: #c7a08a;
-  padding: 0.05em;
-  font-weight: bold;
+  padding: 0.5em;
+  font-weight: 400;
 }
 
 .login_desc {
@@ -192,7 +194,7 @@ svg:hover .login_close-btn {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   box-shadow: inset 4.166666666666667em 0 0 0.00375em var(--boxColor);
-  transition: ease-out 0.5s;
+  transition: box-shadow ease-out 0.5s;
 }
 
 .login_sign-up_div:hover>.login_sign-up-btn {

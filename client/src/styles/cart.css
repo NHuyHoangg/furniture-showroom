@@ -58,7 +58,7 @@
   text-align: left;
   font-weight: 400;
   color: #b06d40;
-  border-bottom: 0.036em solid #473c38;
+  /* border-bottom: 0.036em solid #473c38; */
 }
 
 .cart_item_list::-webkit-scrollbar {
@@ -202,7 +202,7 @@ svg:hover .cart_btn_close_hover {
   text-align: left;
   font-weight: 400;
   color: #b06d40;
-  border-top: 0.036em solid #473c38;
+  /* border-top: 0.036em solid #473c38; */
 }
 
 .cart_footer_align-left {
@@ -245,7 +245,7 @@ svg:hover .cart_btn_close_hover {
   font-size: 2.4em;
 
   box-shadow: inset 4.17em 0 0 0.00375em #ad7252;
-  transition: ease-out 0.5s;
+  transition: box-shadow ease-out 0.5s;
 }
 
 .cart-btn_icon {
