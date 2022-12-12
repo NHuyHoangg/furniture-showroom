@@ -6,7 +6,7 @@
 
 .sign-up_container {
     position: fixed;
-    z-index: 999;
+    z-index: 9999;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     top: 0 ;
     left: 0;
