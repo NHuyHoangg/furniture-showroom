@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/checkout.css";
 import Sort from "../publicPage/sort";
 
-export default function Checkout( { setFilterCollection, setFilterCategory, setAlert, setOpenAlert} ) {
+export default function Checkout( { setFilterCollection, setFilterCategory, setAlert, setOpenAlert } ) {
 
   const navigate = useNavigate();
 

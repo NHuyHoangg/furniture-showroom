@@ -114,7 +114,8 @@
 svg:hover.nav-btn {
   cursor: pointer;
 }
-svg:hover.icon-hover {
+
+svg:hover {
   stroke-width: 1.5;
   cursor: pointer;
 }
@@ -310,4 +311,8 @@ svg:focus {
 
 .logout_button:hover {
   background-color: #d1b7a1;
+}
+
+.disable_cart {
+  pointer-events: none;
 }

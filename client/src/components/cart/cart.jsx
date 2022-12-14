@@ -6,7 +6,7 @@ import "../../styles/cart.css";
 
 function CartItem(item) {
   const [close,setClose] = useState(false);
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   const addCountHandler = () => {
     setCounter(counter + 1);
   };

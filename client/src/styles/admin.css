@@ -24,6 +24,11 @@
   background-color: #757575;
 }
 
+.table_ele .admin_active-btn_purchase {
+  background-color: #125F4B;
+  width: 4.8em;
+}
+
 .admin_fix_modal {
   width: 65em;
   height: 80em;

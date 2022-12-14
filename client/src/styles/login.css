@@ -265,3 +265,10 @@ svg:hover.login_close-btn {
   font-weight: 300;
   color: var(--textColor);
 }
+
+.login_check-valid {
+  position: absolute;
+  top: 3.9em;
+  font-size: 0.8em;
+  color: red;
+}

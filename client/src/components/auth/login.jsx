@@ -1,13 +1,38 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/login.css";
 import "../../styles/signup.css";
 
-export default function Login( {setButtonSignUp, setButtonLogin, setLoggedIn } ) {
+export default function Login( {setButtonSignUp, setButtonLogin, setLoggedIn, setAlert, setOpenAlert } ) {
+  const [email, setEmail] = useState("");
+  const [valid, setValid] = useState(false);
+  const [validCha, setValidCha] = useState("");
+
+  var format = /[ `!#$%^&*()_+\-=\[\]{};':"\\|,<>\/?~]/;
+
   const navigate = useNavigate();
 
   const handleLoggin = () => {
-    
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      setAlert({type: "error", message: "Invalid Email!"});
+      setOpenAlert(true)
+      return;
+    }
+    setAlert({type: 'success', message: 'Login successfully!'}); 
+    setOpenAlert(true);
+    setButtonLogin(false);
+    setLoggedIn(true);
+    navigate("../");
+  }
+
+  const checkValid = (str) => {
+    setEmail(str);
+    if (format.test(str[str.length - 1])) {
+      setValid(true);
+      setValidCha(str[str.length - 1]);
+      return;
+    }
+    setValid(false);
   }
 
   return (
@@ -42,16 +67,18 @@ export default function Login( {setButtonSignUp, setButtonLogin, setLoggedIn } )
           <p className="login_para">
             Join us to savor good things in this life
           </p>
-          <form method="post" className="login_form" onSubmit={()=>handleLoggin()}>
+          <form method="post" className="login_form">
             <div className="login_form_text-field">
               <input
                 className="login_form_text-field_input"
                 type="email"
                 autocomplete="off"
+                onChange={e => checkValid(e.target.value)}
                 required
               />
               <label className="login_form_text-field_label">Email</label>
             </div>
+            {valid && <h2 className="login_check-valid">{`Unvalid Character "${validCha}"`}</h2>}
             <div className="login_form_text-field">
               <input
                 className="login_form_text-field_input"
@@ -68,11 +95,7 @@ export default function Login( {setButtonSignUp, setButtonLogin, setLoggedIn } )
             </div>
             <div className="login_sign-up_div">
               <button className="login_sign-up-btn" type="submit" 
-                      onClick={()=>{
-                        setButtonLogin(false);
-                        setLoggedIn(true);
-                        navigate("../")
-                      }}
+                onClick={()=>{handleLoggin();}}
               >
                 <p>Enjoy now !</p>
                 {/* <i className="fa-solid fa-arrow-right-long fa-2x login_sign-up-btn_icon"></i> */}

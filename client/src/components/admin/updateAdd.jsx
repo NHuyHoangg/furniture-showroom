@@ -53,6 +53,13 @@ export default function UpdateAdd(props) {
     e.preventDefault();
 
     if(!props.trigger[1]) {
+      
+      if(name === "" || name === null) {
+        setAlert({type: "error", message: "You must enter item name!"});
+        setOpenAlert(true)
+        return;
+      }
+
       Axios.put("https://hifurdez.vercel.app/admin/products/add-new", {
         category_id: categoryPick,
         collection_id: collectionPick,
@@ -80,7 +87,7 @@ export default function UpdateAdd(props) {
 
     // props.setTrigger(false)
   }
-  
+
   return props.trigger[0] ? (
     <div className="sign-up_container">
       {openAlert && <Alert alert={alert} setOpenAlert={setOpenAlert} />}

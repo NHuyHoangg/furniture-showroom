@@ -93,6 +93,22 @@ export default function OrderSale({
       })
   }
 
+  const handleStatusSwitch = (id) => {
+    // setOpenLoading(true);
+    // Axios.put("https://hifurdez.vercel.app/admin/products/change-status", {
+    //   id:id
+    // })
+    //   .then((response) => {
+    //     setChangeProducts(!changeProducts)
+    //     setAlert({type: "success", message: response.data.message});
+    //     setOpenAlert(true);
+    //   })
+    //   .catch(err => {
+    //     setAlert({type: "error", message: "Loading fail! Please reload to entry!"});
+    //     setOpenAlert(true)
+    //   }); 
+  }
+
   return (
     <div className="history_container">
       {openModal && <ModalSale modalData={modalData} setOpenModal={setOpenModal}/>}
@@ -176,8 +192,11 @@ export default function OrderSale({
                     <p>${order.amount_total}</p>
                   </div>
                   <div className="table_ele admin_fix-size-1">
-                    <p>{order.is_active ? "Done" : "Delivery"}</p>
-                  </div>
+                    <button 
+                      className= {order.is_active ? "admin_active-btn_purchase": "admin_locked-btn"}
+                      onClick={() => handleStatusSwitch(order.product_id)}>
+                      {order.is_active ? "Delivery" : "Done"}
+                    </button>                  </div>
                   <div className="table_ele admin_fix-size-1">
                     <button className="download_btn">
                       <svg 

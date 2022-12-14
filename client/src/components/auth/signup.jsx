@@ -1,7 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles/signup.css";
 
-export default function Signup( {setButtonSignUp, setButtonLogin } ) {
+export default function Signup( {setButtonSignUp, setButtonLogin, setAlert, setOpenAlert } ) {
+
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  
+  const [fullName, setFullName] = useState("");
+  const [userName, setUserName] = useState("");
+
+  const [validFname, setValidFname] = useState(false);
+  const [validChaFname, setValidChaFname] = useState("");
+
+  const [validUname, setValidUname] = useState(false);
+  const [validChaUname, setValidChaUname] = useState("");
+
+  const [valid, setValid] = useState(false);
+  const [validCha, setValidCha] = useState("");
+
+  const [password, setPassword] = useState("");
+  
+  const [retypedPass, setRetypedPass] = useState("");
+
+  var format = /[ `!#$%^&*()_+\-=\[\]{};':"\\|,<>\/?~]/;
+
+  var formatName = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
+  const handleSignup = () => {
+    if (formatName.test(fullName) || formatName.test(userName)) {
+      setAlert({type: "error", message: "Invalid Character!"});
+      setOpenAlert(true)
+      return;
+    }
+    else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      setAlert({type: "error", message: "Invalid Email!"});
+      setOpenAlert(true)
+      return;
+    }
+    else if (password === "" || retypedPass === "") {
+      setAlert({type: "error", message: "You must enter password!"});
+      setOpenAlert(true)
+      return;
+    }
+    else if (password !== retypedPass) {
+      setAlert({type: "error", message: "The password comfirmation does not match!"});
+      setOpenAlert(true)
+      return;
+    }
+    setAlert({type: 'success', message: 'Sign Up successfully!'}); 
+    setOpenAlert(true);
+    navigate("../");
+  }
+
+  const checkValidEmail = (str) => {
+    setEmail(str);
+    if (format.test(str[str.length - 1])) {
+      setValid(true);
+      setValidCha(str[str.length - 1]);
+      return;
+    }
+    setValid(false);
+  }
+
+  const checkValidName = (str, type) => {
+    (type === "Fname" ? setFullName(str) : setUserName(str));
+    if (formatName.test(str[str.length - 1])) {
+      if(type === "Fname") {
+        setValidFname(true);
+        setValidChaFname(str[str.length - 1]);
+        return;
+      }
+      else {
+        setValidUname(true);
+        setValidChaUname(str[str.length - 1]);
+        return;
+      }
+    }
+    (type === "Fname" ? setValidFname(false) : setValidUname(false));
+  }
+
   return (
     <div className="sign-up_container">
       <div className="sign-up_wrapper">
@@ -18,38 +97,46 @@ export default function Signup( {setButtonSignUp, setButtonLogin } ) {
           <p className="sign-up_para">
             Join us to savor good things in this life.
           </p>
-          <form method="post" className="sign-up_form">
+          <form className="sign-up_form">
             <div className="sign-up_form_text-field">
               <input 
                 className="sign-up_form_text-field_input" 
                 type="text"
                 autocomplete="off"
+                onChange={e => checkValidName(e.target.value, "Fname")}
                 required 
               />
               <label className="sign-up_form_text-field_label">Full name</label>
+              {validFname && <h2 className="signup_check-valid">{`Unvalid Character "${validChaFname}"`}</h2>}
             </div>
             <div className="sign-up_form_text-field">
               <input
                 className="sign-up_form_text-field_input"
                 type="text"
                 autocomplete="off"
+                onChange={e => checkValidName(e.target.value, "Uname")}
+                required
               />
               <label className="sign-up_form_text-field_label">User name</label>
+              {validUname && <h2 className="signup_check-valid">{`Unvalid Character "${validChaUname}"`}</h2>}
             </div>
             <div className="sign-up_form_text-field">
               <input
                 className="sign-up_form_text-field_input"
                 type="text"
                 autocomplete="off"
+                onChange={e => checkValidEmail(e.target.value)}
                 required
               />
               <label className="sign-up_form_text-field_label">Email</label>
+              {valid && <h2 className="signup_check-valid">{`Unvalid Character "${validCha}"`}</h2>}
             </div>
             <div className="sign-up_form_text-field">
               <input
                 className="sign-up_form_text-field_input"
                 type="password"
                 autocomplete="off"
+                onChange={e => setPassword(e.target.value)}
                 required
               />
               <label className="sign-up_form_text-field_label">Password</label>
@@ -59,6 +146,7 @@ export default function Signup( {setButtonSignUp, setButtonLogin } ) {
                 className="sign-up_form_text-field_input"
                 type="password"
                 autocomplete="off"
+                onChange={e => setRetypedPass(e.target.value)}
                 required
               />
               <label className="sign-up_form_text-field_label">
@@ -77,7 +165,9 @@ export default function Signup( {setButtonSignUp, setButtonLogin } ) {
               .
             </div>
             <div className="sign-up_btn">
-              <button type="submit" className="sign-up_btn_submit">
+              <button 
+                className="sign-up_btn_submit"
+                onClick={() => {handleSignup();}}>
                 <p>Sign up</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -98,11 +188,12 @@ export default function Signup( {setButtonSignUp, setButtonLogin } ) {
             </div>
             <div className="sign-up_signup-link">
               Already have an account?&thinsp;
-              <span className="sign-up_link_login" 
-                    onClick={()=>{
-                      setButtonSignUp(false);
-                      setButtonLogin(true);
-                    }}
+              <span 
+                className="sign-up_link_login" 
+                onClick={()=>{
+                  setButtonSignUp(false);
+                  setButtonLogin(true);
+                }}
               >
                 Log in
               </span>

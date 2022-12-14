@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Cart from "../../cart/cart";
 import "../../../styles/navbar.css";
 
-export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTimer} ) {
+export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTimer, disableCart, setAlert, setOpenAlert} ) {
   const [buttonCart, setButtonCart] = useState(false);
 
   const navigate = useNavigate();
@@ -76,7 +76,7 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
                 />
               </label>
             </div>
-            <div className="navbar_a right_nav">
+            <div className={"navbar_a right_nav " + (disableCart && "disable_cart")}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -177,6 +177,8 @@ export default function NavbarLogin( {loggedIn, setLoggedIn, setHeaderNav, setTi
                         setLoggedIn(false);
                         navigate("../");
                         setHeaderNav("");
+                        setAlert({type: 'success', message: 'Logout successfully!'}); 
+                        setOpenAlert(true);
                       }}
                     >
                       LOG OUT
